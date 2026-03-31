@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Robotics Web Simulator — Demo</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 2rem; }
+      pre { background:#111; color:#0f0; padding:1rem; border-radius:6px }
+    </style>
+  </head>
+  <body>
+    <h1>Robotics Web Simulator</h1>
+    <p>This is an initial homepage for testing the container (Coolify CI/CD).</p>
+
+    <h2>picoc-js demo (Hello World)</h2>
+    <pre id="output">Loading picoc-js...</pre>
+
+    <script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js"></script>
+    <script>
+      const out = document.getElementById('output');
+      const prog = `
+#include <stdio.h>
+int main() {
+  printf("Hello from picoc-js!\n");
+  return 0;
+}
+`;
+
+      if (typeof picocjs !== 'undefined' && picocjs.runC) {
+        out.textContent = 'Running...';
+        picocjs.runC(prog, (o) => { out.textContent = o; });
+      } else if (typeof runC !== 'undefined') {
+        out.textContent = 'Running...';
+        runC(prog, (o) => { out.textContent = o; });
+      } else {
+        out.textContent = 'picoc-js not available';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "robotics-web-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Robotics Web Simulator — static frontend served from Docker. Built with emscripten when applicable.",
+  "scripts": {
+    "build": "node ./scripts/build-fallback.js",
+    "start": "http-server dist -p 8080"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
