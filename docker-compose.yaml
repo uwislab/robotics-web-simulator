@@ -8,7 +8,7 @@ services:
     # Do not bind container port to host to avoid "port already allocated" errors on shared hosts.
     # Use expose so the service is reachable within the Docker network (Coolify will handle external routing).
     expose:
-      - "8080"
+      - "80"
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://localhost:8080/ | grep -q 'Hello, World' || exit 1"]
       interval: 30s
@@ -24,7 +24,7 @@ services:
     image: robotics-web-simulator:emsdk
     # emsdk profile also exposes the container port only (no host binding)
     expose:
-      - "8080"
+      - "80"
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://localhost:8080/ | grep -q 'Hello, World' || exit 1"]
       interval: 30s
