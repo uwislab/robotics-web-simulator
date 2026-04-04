@@ -41,8 +41,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # dynaconf 双下划线映射：github.user_token
           GITHUB__USER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # 使用 GitHub Models 作为 OpenAI 兼容后端（无需单独的 OpenAI API Key）
-          OPENAI_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          # 使用有 models 权限的 PAT 调用 GitHub Models 端点（Actions 自带 GITHUB_TOKEN 无此权限）
+          OPENAI_API_KEY: ${{ secrets.MODELS_API_KEY }}
           OPENAI_API_BASE: https://models.inference.ai.azure.com
           PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
         run: |
