@@ -39,8 +39,11 @@ jobs:
       - name: Run PR Agent Review（工程实践4定制版）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # pr-agent 0.2.4 使用 dynaconf，需要双下划线格式的 env var 来映射 github.user_token
+          # dynaconf 双下划线映射：github.user_token
           GITHUB__USER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 使用 GitHub Models 作为 OpenAI 兼容后端（无需单独的 OpenAI API Key）
+          OPENAI_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_BASE: https://models.inference.ai.azure.com
           PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
         run: |
           set -x

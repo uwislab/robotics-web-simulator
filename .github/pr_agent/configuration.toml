@@ -1,6 +1,6 @@
 [pr_reviewer]
 # 工程实践4 - 软件工程实验课 PR Review 核心规则
-model = "GPT-5-mini"
+model = "gpt-4o-mini"
 max_tokens = 3000
 temperature = 0.1
 reviewer_prompts = [
@@ -11,10 +11,11 @@ reviewer_prompts = [
   "性能与资源：内存/循环/网络请求优化",
   "文档：PR 描述、演示截图/录屏、变更说明"
 ]
+
 # 通用配置
 [github]
 # 使用 GitHub Secrets 来提供 token，切勿将真实 token 写入仓库
 access_token = "${{ secrets.GITHUB_TOKEN }}"
 [openai]
-model = "GPT-5-mini"
-api_key = "${{ secrets.COPILOT_API_KEY }}"  # 可选：若Copilot需单独API Key
+model = "gpt-4o-mini"
+# api_key 通过 OPENAI_API_KEY 环境变量注入，此处不写入文件避免明文泄露
