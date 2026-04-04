@@ -31,10 +31,11 @@ jobs:
           cat .github/pr_agent/configuration.toml
 
       - name: Run PR Agent Review（工程实践4定制版）
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_GITHUB_TOKEN: 
-          PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # 若需在 workflow 中使用自定义 token，请在仓库 Secrets 中添加 GITHUB_PAT
+            CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+            PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
         run: |
           pr-agent review --pr_url ${{ github.event.pull_request.html_url }}
 

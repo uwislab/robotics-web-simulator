@@ -30,7 +30,8 @@ output_format = """
 """
 # 通用配置
 [github]
-access_token = ""
+# 使用 GitHub Secrets 来提供 token，切勿将真实 token 写入仓库
+access_token = "${{ secrets.GITHUB_TOKEN }}"
 [openai]
 model = "GPT-5-mini"
 api_key = "${{ secrets.COPILOT_API_KEY }}"  # 可选：若Copilot需单独API Key
