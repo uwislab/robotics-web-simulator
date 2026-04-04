@@ -8,3 +8,4 @@ def func1(a, b):
 f = open("test.txt", "w")
 f.write("test")
 # 未关闭文件句柄
+# Trigger: fix pr-agent command syntax
