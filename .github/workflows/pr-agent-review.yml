@@ -37,12 +37,12 @@ jobs:
       - name: Run PR Agent Review（工程实践4定制版）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # 若需在 workflow 中使用自定义 token，请在仓库 Secrets 中添加 GITHUB_PAT
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+          # pr-agent 0.2.4 使用 dynaconf，需要双下划线格式的 env var 来映射 github.user_token
+          GITHUB__USER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
         run: |
           set -x
-          # pr-agent 0.2.4 syntax: --pr_url must come BEFORE the subcommand
+          # pr-agent 0.2.4 语法：--pr_url 必须在子命令之前
           pr-agent --pr_url "${{ github.event.pull_request.html_url }}" review || true
 
       - name: 输出PR-Agent输出与日志（便于调试）
