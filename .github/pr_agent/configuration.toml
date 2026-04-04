@@ -1,6 +1,6 @@
 [pr_reviewer]
 # 工程实践4 - 软件工程实验课 PR Review 核心规则
-model = gpt-5-mini
+model = "gpt-5-mini"
 max_tokens = 3000
 # 【关键参数】Review严格度控制（核心调整项）
 # 规则：值越低越严格，0.1为最严格（实验课默认强制最严校验）
