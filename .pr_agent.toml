@@ -1,3 +1,4 @@
+# pr-agent 仓库级配置（覆盖默认 model/fallback 为 GitHub Models 支持的模型）
 [config]
 model = "gpt-4o-mini"
 model_turbo = "gpt-4o-mini"
@@ -15,8 +16,3 @@ reviewer_prompts = [
   "性能与资源：内存/循环/网络请求优化",
   "文档：PR 描述、演示截图/录屏、变更说明"
 ]
-
-[github]
-access_token = "${{ secrets.GITHUB_TOKEN }}"
-[openai]
-model = "gpt-4o-mini"
