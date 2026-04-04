@@ -21,20 +21,10 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Diagnostic info
+      - name: Install PR-Agent
         run: |
-          echo "=== ENV ==="
-          env || true
-          echo "=== Python ==="
-          python -V || true
-          echo "=== Pip list ==="
-          pip --version || true
-          pip list || true
-
-      - name: Install PR-Agent (debug)
-        run: |
+          # 安装固定版本以保证稳定性，失败则回退到最新版本
           pip install pr-agent==0.2.4 || pip install pr-agent
-          echo "pr-agent version:"
           pr-agent --version || true
 
       - name: 加载课程专属配置
