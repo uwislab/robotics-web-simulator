@@ -25,6 +25,8 @@ jobs:
         run: |
           # 安装固定版本以保证稳定性，失败则回退到最新版本
           pip install pr-agent==0.2.4 || pip install pr-agent
+          # 升级 litellm 以修复与新版 openai 的 proxies 参数不兼容问题
+          pip install "litellm>=1.35.0" --upgrade
           pr-agent --version || true
 
       - name: 加载课程专属配置
