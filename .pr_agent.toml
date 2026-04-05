@@ -3,6 +3,7 @@
 model = "gpt-5-mini"
 model_turbo = "gpt-5-mini"
 fallback_models = ["gpt-5-mini"]
+custom_model_max_tokens = 128000
 
 [pr_reviewer]
 model = "gpt-5-mini"
