@@ -8,6 +8,9 @@ on:
 jobs:
   pr_agent_review:
     runs-on: ubuntu-latest
+    env:
+      # 消除 Node.js 20 弃用警告（checkout@v4 / setup-python@v5 仍基于 Node.js 20）
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     permissions:
       pull-requests: write
       contents: read
