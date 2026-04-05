@@ -2,8 +2,6 @@ name: 工程实践4 - PR Agent 自动Review
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-  pull_request_review_comment:
-    types: [created]
 
 jobs:
   pr_agent_review:
