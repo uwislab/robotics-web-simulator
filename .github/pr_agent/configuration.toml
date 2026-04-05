@@ -4,6 +4,7 @@ model = "gpt-5-mini"
 model_turbo = "gpt-5-mini"
 fallback_models = ["gpt-5-mini"]
 custom_model_max_tokens = 128000
+temperature = 1
 
 [pr_reviewer]
 # 工程实践4 - 软件工程实验课 PR Review 核心规则（来自 PR-Agent-reviewer-prompts.md）

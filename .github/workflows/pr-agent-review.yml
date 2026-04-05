@@ -45,6 +45,7 @@ jobs:
           # 使用有 models 权限的 PAT 调用 GitHub Models 端点（Actions 自带 GITHUB_TOKEN 无此权限）
           OPENAI_API_KEY: ${{ secrets.MODELS_API_KEY }}
           OPENAI_API_BASE: https://models.inference.ai.azure.com
+          LITELLM_DROP_PARAMS: "true"
           PR_AGENT_CONFIG_PATH: .github/pr_agent/configuration.toml
         run: |
           set -x
