@@ -9,7 +9,7 @@ custom_model_max_tokens = 128000
 # 工程实践4 - 软件工程实验课 PR Review 核心规则（来自 PR-Agent-reviewer-prompts.md）
 model = "gpt-5-mini"
 max_tokens = 3000
-temperature = 0.1
+temperature = 1
 reviewer_prompts = [
   "代码规范性：检查PEP8/ESLint、命名、注释与常量化",
   "功能完整性：实现是否满足实验要求，是否有边界测试",

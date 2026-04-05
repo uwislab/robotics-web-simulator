@@ -8,7 +8,7 @@ custom_model_max_tokens = 128000
 [pr_reviewer]
 model = "gpt-5-mini"
 max_tokens = 3000
-temperature = 0.1
+temperature = 1
 reviewer_prompts = [
   "代码规范性：检查PEP8/ESLint、命名、注释与常量化",
   "功能完整性：实现是否满足实验要求，是否有边界测试",
