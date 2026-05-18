@@ -1,0 +1,21 @@
+{
+  "name": "robot-script-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:picoc": "powershell -ExecutionPolicy Bypass -File ./scripts/build-picoc.ps1"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.52.2",
+    "three": "^0.179.1",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^5.4.19"
+  }
+}
