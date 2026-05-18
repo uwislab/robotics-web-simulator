@@ -1,0 +1,5 @@
+
+> robot-sensor-sim-backend@1.0.0 start
+> node src/index.js
+
+Sensor simulation server listening on http://localhost:3001
